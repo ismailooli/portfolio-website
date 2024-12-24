@@ -1,6 +1,14 @@
+@import url("https://use.typekit.net/cjw5vct.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html, body {
+    font-family: "router", sans-serif;
+  }
+}
 
 :root {
   /* Light theme variables - Cream palette */
@@ -79,3 +87,5 @@ body {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
+
+

@@ -161,10 +161,10 @@ const DirectoryTree = () => {
     <div className="flex h-full">
       {/* Directory Sidebar */}
       <div className={`w-72 ${
-        isDark 
-          ? 'bg-gray-900 border-gray-700' 
-          : 'bg-gray-100 border-gray-200'
-      } border-r transition-colors`}>
+  isDark 
+    ? 'bg-gray-900' 
+    : 'bg-gray-100'
+} transition-colors`}>
         <div className="py-2">
           <DirectoryItem 
             name="About" 

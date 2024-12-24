@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
+import '../../App.css'
 
 const WindowFrame = ({ title = 'Window', children, onClose }) => {
   const { isDark } = useTheme();
@@ -29,10 +30,9 @@ const WindowFrame = ({ title = 'Window', children, onClose }) => {
         maxWidth: '800px',
         left: position.left,
         top: position.top,
-        maxHeight: '70vh',
-        overflowY: 'auto'
+        height: '70vh', // Changed from maxHeight to fixed height
       }}
-      className="fixed rounded-lg shadow-lg overflow-hidden border-2"
+      className="fixed rounded-lg shadow-lg overflow-hidden border-2 flex flex-col" // Added flex flex-col
       drag
       dragMomentum={false}
       dragElastic={0}
@@ -50,7 +50,7 @@ const WindowFrame = ({ title = 'Window', children, onClose }) => {
           backgroundColor: 'var(--background-secondary)',
           color: 'var(--text-secondary)'
         }}
-        className="px-4 py-2 flex items-center justify-between cursor-grab active:cursor-grabbing sticky top-0 z-10"
+        className="px-4 py-2 flex items-center justify-between cursor-grab active:cursor-grabbing z-10"
         onPointerDown={(e) => {
           e.stopPropagation();
         }}
@@ -70,9 +70,12 @@ const WindowFrame = ({ title = 'Window', children, onClose }) => {
       </motion.div>
       
       {/* Window Content */}
-      <div style={{ color: 'var(--text-primary)' }} className="p-4">
-        {children}
-      </div>
+      <div 
+  style={{ color: 'var(--text-primary)' }} 
+  className="flex-1 overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent hover:scrollbar-thumb-gray-600"
+>
+  {children}
+</div>
     </motion.div>
   );
 };

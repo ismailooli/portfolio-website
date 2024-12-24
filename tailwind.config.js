@@ -4,21 +4,14 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class', // Enable class-based dark mode
   theme: {
     extend: {
-      colors: {
-        background: {
-          primary: 'var(--background-primary)',
-          secondary: 'var(--background-secondary)',
-          tertiary: 'var(--background-tertiary)',
-        },
-        text: {
-          primary: 'var(--text-primary)',
-          secondary: 'var(--text-secondary)',
-        }
-      }
+      fontFamily: {
+        sans: ["router", "sans-serif"],
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
 }
