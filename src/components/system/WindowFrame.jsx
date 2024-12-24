@@ -69,7 +69,7 @@ const WindowFrame = ({ title = 'Window', children, onClose }) => {
         </div>
       </motion.div>
       
-      {/* Window Content */}
+      {/* Window Contentf */}
       <div 
   style={{ color: 'var(--text-primary)' }} 
   className="flex-1 overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent hover:scrollbar-thumb-gray-600"
