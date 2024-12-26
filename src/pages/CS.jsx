@@ -12,6 +12,20 @@ const CS = () => {
       description: 'This portfolio website is something I wanted to create for a while to show off my design and coding capabilities. My inspiration was an old File Explorer.',
       tech: ['React', 'Tailwind', 'Framer Motion'],
       github: 'https://github.com/username/portfolio-website'
+    },
+    {
+      id: 2,
+      title: 'Secret Sharer',
+      description: 'Used a sentiment analyiss model trained on the relationships between people in my friend group to help improve my friends social awareness.',
+      tech: ['Python', 'Flask ', 'Hugging Face API'],
+      github: 'https://github.com/ismailooli/secret-sharer'
+    },
+    {
+      id: 3,
+      title: '~scarf',
+      description: 'Developed a web application that gave me clothing reccomendations based on the weather. My inspiration for this was that I always wanted my weather app to be able to tell me what to wear',
+      tech: ['SQL', 'JavaScript', 'Python', 'OpenWeather API'],
+      github: 'https://github.com/ismailooli/-scarf'
     }
   ];
 
