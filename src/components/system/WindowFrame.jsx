@@ -30,9 +30,9 @@ const WindowFrame = ({ title = 'Window', children, onClose }) => {
         maxWidth: '800px',
         left: position.left,
         top: position.top,
-        height: '70vh', // Changed from maxHeight to fixed height
+        maxHeight: '80vh', // Changed from fixed height to maxHeight
       }}
-      className="fixed rounded-lg shadow-lg overflow-hidden border-2 flex flex-col" // Added flex flex-col
+      className="fixed rounded-lg shadow-lg overflow-hidden border-2 flex flex-col"
       drag
       dragMomentum={false}
       dragElastic={0}
@@ -55,7 +55,7 @@ const WindowFrame = ({ title = 'Window', children, onClose }) => {
           e.stopPropagation();
         }}
       >
-        <span className="font-mono text-sm select-none">{title}</span>
+        <span className=" text-sm select-none">{title}</span>
         <div className="flex gap-2">
           <button 
             className="hover:bg-red-500/10 hover:text-red-500 p-1 rounded cursor-pointer transition-colors"
@@ -69,13 +69,13 @@ const WindowFrame = ({ title = 'Window', children, onClose }) => {
         </div>
       </motion.div>
       
-      {/* Window Contentf */}
+      {/* Window Content */}
       <div 
-  style={{ color: 'var(--text-primary)' }} 
-  className="flex-1 overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent hover:scrollbar-thumb-gray-600"
->
-  {children}
-</div>
+        style={{ color: 'var(--text-primary)' }} 
+        className="flex-1 overflow-auto min-h-0"
+      >
+        {children}
+      </div>
     </motion.div>
   );
 };

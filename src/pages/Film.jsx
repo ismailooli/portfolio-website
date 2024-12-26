@@ -1,7 +1,7 @@
-// Film.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
+import "../App.css"
 
 const Film = () => {
   const { isDark } = useTheme();
@@ -18,7 +18,6 @@ const Film = () => {
     }
   ];
 
-  // Theme-specific styles
   const styles = {
     title: {
       color: isDark ? 'rgb(209, 213, 219)' : 'rgb(55, 65, 81)'
@@ -38,58 +37,60 @@ const Film = () => {
   };
 
   return (
-    <div className="space-y-6">
-      <h1 style={styles.title} className="text-2xl font-mono mb-6">
-        ► Filmography & Video Work
-      </h1>
+    <div className="h-full overflow-y-auto">
+      <div className="px-4 py-3">
+        <h1 style={styles.title} className="text-2xl font-mono mb-3">
+          ► Filmography & Video Work
+        </h1>
 
-      <div className="space-y-4">
-        {films.map(film => (
-          <motion.div
-            key={film.id}
-            style={{
-              ...styles.projectCard,
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-              transform: 'translateY(0)'
-            }}
-            className="p-6 rounded-lg border cursor-pointer"
-            whileHover={{
-              y: -2,
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-              transition: { duration: 0.2 }
-            }}
-            whileTap={{
-              y: 0,
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
-            }}
-            onClick={() => window.open(film.youtubeUrl, '_blank')}
-          >
-            <h2 style={styles.projectCard} className="text-xl font-mono">
-              {film.title}
-            </h2>
-            
-            <p style={styles.description} className="text-sm mt-2 mb-4">
-              {film.description}
-            </p>
+        <div className="space-y-3">
+          {films.map(film => (
+            <motion.div
+              key={film.id}
+              style={{
+                ...styles.projectCard,
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                transform: 'translateY(0)'
+              }}
+              className="p-4 rounded-lg border cursor-pointer"
+              whileHover={{
+                y: -2,
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{
+                y: 0,
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+              }}
+              onClick={() => window.open(film.youtubeUrl, '_blank')}
+            >
+              <h2 style={styles.projectCard} className="text-xl font-mono">
+                {film.title}
+              </h2>
+              
+              <p style={styles.description} className="text-sm mt-2 mb-3">
+                {film.description}
+              </p>
 
-            <div className="flex flex-wrap gap-2 mb-3">
-              {film.roles.map((role, index) => (
-                <span 
-                  key={index}
-                  style={styles.tag}
-                  className="px-3 py-1 rounded-lg text-xs font-medium"
-                >
-                  {role}
-                </span>
-              ))}
-            </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                {film.roles.map((role, index) => (
+                  <span 
+                    key={index}
+                    style={styles.tag}
+                    className="px-2 py-0.5 rounded text-xs font-medium"
+                  >
+                    {role}
+                  </span>
+                ))}
+              </div>
 
-            <div className="text-xs flex items-center gap-2" style={styles.description}>
-              <span>{film.year}</span>
-              <span>{film.format}</span>
-            </div>
-          </motion.div>
-        ))}
+              <div className="text-xs flex items-center gap-2" style={styles.description}>
+                <span>{film.year}</span>
+                <span>{film.format}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

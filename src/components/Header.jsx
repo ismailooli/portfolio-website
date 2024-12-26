@@ -16,7 +16,7 @@ const Header = () => {
   }, []);
   
   return (
-    <div className="flex flex-col">
+    <div className={`flex flex-col ${isDark ? 'border-gray-600' : 'border-gray-300'} border-b`}>
       {/* Top toolbar with centered time */}
       <div style={{ 
         backgroundColor: 'var(--background-secondary)',

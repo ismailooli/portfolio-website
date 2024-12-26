@@ -1,5 +1,5 @@
 @import url("https://use.typekit.net/cjw5vct.css");
-
+@import url("https://use.typekit.net/cjw5vct.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,30 +8,35 @@
   html, body {
     font-family: "router", sans-serif;
   }
+  
+  h1, h2, h3, .title {
+    font-family: "logic-monoscript", mono;
+    font-weight: 400;
+    font-style: normal;
+  }
 }
 
 :root {
-  /* Light theme variables - Cream palette */
-  --background-primary: #faf6f1;
-  --background-secondary: #f5f0e8;
-  --background-tertiary: #ebe5dc;
-  --text-primary: #2c3e50;
-  --text-secondary: #5d6b7b;
-  --border-color: #e0d5c4;
-  --tag-bg: #e6dfd6;
-  --tag-text: #4a5568;
+  --background-primary: #fdfcfb; /* Soft off-white for a clean look */
+  --background-secondary: #f7f3f0; /* Very light beige for subtle contrast */
+  --background-tertiary: #ede8e5; /* Muted warm gray for cards/elements */
+  --text-primary: #3a3a3a; /* Neutral dark gray for readability */
+  --text-secondary: #6b6b6b; /* Soft mid-gray for less emphasis */
+  --border-color: #d6cdc4; /* Warm neutral for unobtrusive borders */
+  --tag-bg: #eae4e1; /* Soft pale peach for tag backgrounds */
+  --tag-text: #595959; /* Deep gray for tag text */
 }
 
 /* Dark theme variables - Navy palette */
 :root.dark {
-  --background-primary: #1a2638;
-  --background-secondary: #233044;
-  --background-tertiary: #2c3a50;
-  --text-primary: #e8eef4;
-  --text-secondary: #a3b3c7;
-  --border-color: #3d4a61;
-  --tag-bg: #2d3b4f;
-  --tag-text: #cbd5e0;
+  --background-primary: #1e1f26; /* Deep charcoal for a rich background */
+  --background-secondary: #282a36; /* Muted slate gray for contrast */
+  --background-tertiary: #333544; /* Slightly lighter charcoal for elements */
+  --text-primary: #e3e6ed; /* Soft off-white for comfortable reading */
+  --text-secondary: #b5bcc6; /* Muted gray-blue for less emphasis */
+  --border-color: #404453; /* Neutral dark slate for borders */
+  --tag-bg: #2e3140; /* Muted navy for subtle tags */
+  --tag-text: #d0d4e1; /* Light slate blue for tag text */
 }
 
 /* Apply theme variables */

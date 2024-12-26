@@ -34,48 +34,50 @@ const CS = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h2 className="text-2xl font-mono mb-6">Computer Science Projects</h2>
-      <div className="space-y-4">
-        {projects.map(project => (
-          <motion.div
-            key={project.id}
-            style={{
-              ...styles.projectCard,
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-              transform: 'translateY(0)'
-            }}
-            className="p-6 rounded-lg border cursor-pointer"
-            whileHover={{
-              y: -2,
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-              transition: { duration: 0.2 }
-            }}
-            whileTap={{
-              y: 0,
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
-            }}
-            onClick={() => window.open(project.github, '_blank')}
-          >
-            <h3 style={styles.projectCard} className="text-xl font-mono">
-              {project.title}
-            </h3>
-            <p style={styles.description} className="text-sm mt-2 mb-4">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-3">
-              {project.tech.map(tech => (
-                <span 
-                  key={tech} 
-                  style={styles.tag}
-                  className="px-3 py-1 rounded-lg text-xs font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+    <div className="h-full overflow-y-auto">
+      <div className="px-4 py-3">
+        <h2 className="text-2xl font-mono mb-3">► Computer Science Projects</h2>
+        <div className="space-y-3">
+          {projects.map(project => (
+            <motion.div
+              key={project.id}
+              style={{
+                ...styles.projectCard,
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                transform: 'translateY(0)'
+              }}
+              className="p-4 rounded-lg border cursor-pointer"
+              whileHover={{
+                y: -2,
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{
+                y: 0,
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+              }}
+              onClick={() => window.open(project.github, '_blank')}
+            >
+              <h3 style={styles.projectCard} className="text-xl font-mono">
+                {project.title}
+              </h3>
+              <p style={styles.description} className="text-sm mt-2 mb-3">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map(tech => (
+                  <span 
+                    key={tech} 
+                    style={styles.tag}
+                    className="px-2 py-0.5 rounded text-xs font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
