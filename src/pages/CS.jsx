@@ -26,6 +26,13 @@ const CS = () => {
       description: 'Developed a web application that gave me clothing reccomendations based on the weather. My inspiration for this was that I always wanted my weather app to be able to tell me what to wear',
       tech: ['SQL', 'JavaScript', 'Python', 'OpenWeather API'],
       github: 'https://github.com/ismailooli/-scarf'
+    },
+    {
+      id: 4,
+      title: 'Moodscape',
+      description: 'Created a data analysis and visualization platform on Jupyter Notebook that allowed the user to view correlations between user moods and their music',
+      tech: ['Spotify API', 'Jupyter Notebook', 'Python', 'Plotly', 'Pandas'],
+      github: 'https://colab.research.google.com/drive/1JSA2x_91j1GMu9VBz7sOhYE2TII4NK7X?authuser=1'
     }
   ];
 
